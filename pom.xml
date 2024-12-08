@@ -167,6 +167,8 @@
     <commons.rc.version>RC1</commons.rc.version>
     <commons.release.isDistModule>true</commons.release.isDistModule>
     <commons.distSvnStagingUrl>scm:svn:https://dist.apache.org/repos/dist/dev/commons/lang</commons.distSvnStagingUrl>
+    <!-- JaCoCo: Don't make code coverage worse than: -->
+    <sonar.jacoco.reportPaths>repo/target/jacoco.xml</sonar.jacoco.reportPaths>
   </properties>
 
   <build>
@@ -216,13 +218,20 @@
             </execution>
             <execution>
                 <id>report</id>
-                <phase>test</phase>
-                <goals>
-                    <goal>report</goal>
-                </goals>
-            </execution>
-        </executions>
-      </plugin>
+                <phase>verify</phase>
+                    <goals>
+                        <goal>report</goal>
+                    </goals>
+                    <configuration>
+                        <outputDirectory>repo/target</outputDirectory>
+                        <reports>
+                            <xml>true</xml>
+                            <html>true</html>
+                        </reports>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
       <plugin>
         <artifactId>maven-javadoc-plugin</artifactId>
           <configuration>
