@@ -236,8 +236,7 @@
                     </goals>
                     <configuration>
                         <!-- XML 리포트 생성 설정 -->
-                        <outputDirectory>${project.build.directory}/jacoco-report</outputDirectory>
-                        <dataFile>${project.build.directory}/jacoco.exec</dataFile>
+                        <outputDirectory>${project.build.directory}/site/jacoco</outputDirectory>
                         <reports>
                             <xml>true</xml>
                             <html>true</html>
