@@ -198,19 +198,6 @@
               <exclude>**/test.txt</exclude>
               <exclude>**/login_test.js</exclude>
               <exclude>**/.rat-ignore</exclude>
-	      <exclude>**/full_log.txt</exclude>
-	      <exclude>**/jacoco_full.txt</exclude>
-	      <exclude>**/jacoco_log.txt</exclude>
-	      <exclude>**/maven_full.txt</exclude>
-	      <exclude>**/maven_log.txt</exclude>
-	      <exclude>**/junit_full.txt</exclude>
-	      <exclude>**/junit_log.txt</exclude>
-	      <exclude>**/sonar_full.txt</exclude>
-	      <exclude>**/sonar_log.txt</exclude>
-	      <exclude>**/quality_full.txt</exclude>
-	      <exclude>**/quality_log.txt</exclude>
-	      <exclude>**/lhci_full.txt</exclude>
-	      <exclude>**/lhci_log.txt</exclude>
             </excludes>
           </configuration>
         </plugin>
@@ -220,31 +207,22 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-          <version>0.8.10</version>
-            <executions>
-                <execution>
-                    <id>prepare-agent</id>
-                    <goals>
-                        <goal>prepare-agent</goal>
-                    </goals>
-                </execution>
-                <execution>
-                    <id>report</id>
-                    <phase>verify</phase>
-                    <goals>
-                        <goal>report</goal>
-                    </goals>
-                    <configuration>
-                        <!-- XML 리포트 생성 설정 -->
-                        <outputDirectory>${project.build.directory}/site/jacoco</outputDirectory>
-                        <reports>
-                            <xml>true</xml>
-                            <html>true</html>
-                        </reports>
-                    </configuration>
-                </execution>
-            </executions>
-        </plugin>
+        <version>0.8.8</version>
+        <executions>
+            <execution>
+                <goals>
+                    <goal>prepare-agent</goal>
+                </goals>
+            </execution>
+            <execution>
+                <id>report</id>
+                <phase>test</phase>
+                <goals>
+                    <goal>report</goal>
+                </goals>
+            </execution>
+        </executions>
+      </plugin>
       <plugin>
         <artifactId>maven-javadoc-plugin</artifactId>
           <configuration>
@@ -1032,4 +1010,3 @@
     </contributor>
   </contributors>
 </project>
-
