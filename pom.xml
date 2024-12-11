@@ -194,35 +194,6 @@
             </rulesets>
           </configuration>
         </plugin>
-        <plugin>
-          <groupId>org.apache.rat</groupId>
-          <artifactId>apache-rat-plugin</artifactId>
-          <configuration>
-            <excludes>
-              <exclude>site-content/**</exclude>
-              <exclude>src/site/resources/.htaccess</exclude>
-              <exclude>src/site/resources/download_lang.cgi</exclude>
-              <exclude>src/site/resources/release-notes/RELEASE-NOTES-*.txt</exclude>
-              <exclude>src/test/resources/lang-708-input.txt</exclude>
-              <exclude>**/test.txt</exclude>
-              <exclude>**/login_test.js</exclude>
-              <exclude>**/.rat-ignore</exclude>
-	            <exclude>**/full_log.txt</exclude>
-	            <exclude>**/jacoco_full.txt</exclude>
-	            <exclude>**/jacoco_log.txt</exclude>
-	            <exclude>**/maven_full.txt</exclude>
-	            <exclude>**/maven_log.txt</exclude>
-	            <exclude>**/junit_full.txt</exclude>
-	            <exclude>**/junit_log.txt</exclude>
-	            <exclude>**/sonar_full.txt</exclude>
-	            <exclude>**/sonar_log.txt</exclude>
-	            <exclude>**/quality_full.txt</exclude>
-	            <exclude>**/quality_log.txt</exclude>
-	            <exclude>**/lhci_full.txt</exclude>
-	            <exclude>**/lhci_log.txt</exclude>
-            </excludes>
-          </configuration>
-        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
